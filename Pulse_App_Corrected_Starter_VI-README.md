@@ -1,0 +1,41 @@
+# Pulse — Sponsor-Ready Starter (Q4 2025 Target)
+
+This repository is a **production-minded starter** for the Pulse™ app. It includes:
+- **Mobile app (Expo/React Native + TypeScript)** for iOS/Android.
+- **Backend API (FastAPI + SQLAlchemy)** with auth, consent, events, and sponsor APIs.
+- **Analytics service (Python)** to ingest events and generate trend signals for brands.
+- **Data model** for users, sessions, events, segments, sponsors, and campaigns.
+- **Privacy-by-design**: opt-in consent, data minimization, and deletion endpoints.
+
+> Goal: Hand this to AI coders/engineers to complete feature build and ship MVP by late Q4 2025.
+
+---
+
+## Quick Start
+
+### Backend
+```bash
+cd backend
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+
+cd mobile
+npm i
+npx expo start
+
+cd analytics
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+python jobs/demo_ingest.py
+
+POST /sponsor/insights — retrieve time-series engagement metrics (anonymized; k-anon ≥ 50).
+
+DELETE /privacy/delete/{user_id} — user data deletion for compliance.
+
+© 2025 Quantum Vanguard Technologies, Inc. (QVTI™)
+Engineering the Future of Human Connection™
+
+
+---
+
